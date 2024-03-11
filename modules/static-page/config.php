@@ -2,7 +2,7 @@
 
 return [
     '__name' => 'static-page',
-    '__version' => '0.0.1',
+    '__version' => '0.1.0',
     '__git' => 'git@github.com:getmim/static-page.git',
     '__license' => 'MIT',
     '__author' => [
@@ -38,6 +38,26 @@ return [
     ],
     'libFormatter' => [
         'formats' => [
+            'static-page-user' => [
+                '@rest' => [
+                    'type' => 'delete'
+                ],
+                'id' => [
+                    'type' => 'number'
+                ],
+                'fullname' => [
+                    'type' => 'text'
+                ],
+                'name' => [
+                    'type' => 'text'
+                ],
+                'updated' => [
+                    'type' => 'date'
+                ],
+                'created' => [
+                    'type' => 'date'
+                ]
+            ],
             'static-page' => [
                 'id' => [
                     'type' => 'number'
@@ -49,7 +69,7 @@ return [
                         'field' => 'id',
                         'type'  => 'number'
                     ],
-                    'format' => 'user'
+                    'format' => 'static-page-user'
                 ],
                 'title' => [
                     'type' => 'text'
